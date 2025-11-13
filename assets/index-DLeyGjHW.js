@@ -14,9 +14,9 @@ Error generating stack: `+e.message+`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 100px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   box-sizing: border-box;
 `,lv=Cl.div`
   background: #ffffff;
@@ -30,15 +30,14 @@ Error generating stack: `+e.message+`
 `,av=Cl.div`
   background: #ffffff;
   width: 100%;
-  max-width: ${c=>c.large?"95%":"420px"};
-  height: ${c=>c.large?"85vh":"auto"};
+  max-width: 100%;
+  height: 98vh;                 /* 🔥 antes 85vh */
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
-  padding: 0; /* importante: evitamos padding que reduce espacio del iframe */
+  border-radius: 16px;          /* más profesional */
+  padding: 0;                   /* 🔥 quitar padding interno */
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  box-sizing: border-box;
   margin: 0 auto;
 `,ev=Cl.h1`
   font-size: 26px;
@@ -110,16 +109,19 @@ Error generating stack: `+e.message+`
   width: 100%;
   background: #1d3557;
   color: white;
-  padding: 18px 24px;
+  padding: 0px 0px;      /* antes eran 18px 24px */
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 16px 16px 0 0;
+  border-radius: 12px 12px 0 0;   /* menos curvo */
+  height: 40px;                   /* 🔥 header más delgado */
 `,sv=Cl.div`
-  position: relative;
+  flex: 1;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
+  position: relative;
+  margin: 0;       /* 🔥 eliminar márgenes */
+  padding: 0;      /* 🔥 eliminar padding */
 `,rv=Cl.iframe`
   position: absolute;
   top: 0;
@@ -127,4 +129,4 @@ Error generating stack: `+e.message+`
   width: 100%;
   height: 100%;
   border: none;
-`,Wd="/assets/lab4u_logo-o_offLOe.svg",ov="https://app.powerbi.com/view?r=eyJrIjoiYmUyYTAzNDktMjFiZC00ZmViLTliMjYtOGFmMDRmZWVmZTgxIiwidCI6IjE0NzZmZmRhLTQ0ZTMtNDI0MS1iNGNhLWQ2OWQyZGMwMWE4NCIsImMiOjR9";function dv(){const[c,r]=ja.useState(""),[o,s]=ja.useState(""),[S,O]=ja.useState(()=>!!localStorage.getItem("auth_code")),U=ja.useMemo(()=>new URLSearchParams(window.location.search).get("report")||ov,[]),j=x=>["INVESTLAB4U@2026"].includes(x.trim().toUpperCase()),D=x=>{if(x.preventDefault(),s(""),!c.trim()){s("Please enter a code");return}if(!j(c)){s("Invalid or incorrect code");return}localStorage.setItem("auth_code",c.trim()),O(!0)},z=()=>{localStorage.removeItem("auth_code"),O(!1)};return S?xt.jsx(wd,{children:xt.jsxs(av,{large:!0,children:[xt.jsxs(fv,{children:[xt.jsxs("div",{style:{display:"flex",alignItems:"center",gap:12},children:[xt.jsx("img",{src:Wd,alt:"Lab4U",style:{height:35}}),xt.jsx("span",{style:{fontWeight:600},children:"Reports Panel"})]}),xt.jsx(cv,{onClick:z,children:"Sign out"})]}),xt.jsx(sv,{children:xt.jsx(rv,{src:U,allowFullScreen:!0})})]})}):xt.jsx(wd,{children:xt.jsxs(lv,{children:[xt.jsx("img",{src:Wd,alt:"Lab4U",style:{height:45,marginBottom:20}}),xt.jsx(ev,{children:"Access your report"}),xt.jsx(uv,{children:"Enter the code we provided to access the Power BI report."}),xt.jsxs("form",{onSubmit:D,children:[xt.jsx("label",{style:{fontWeight:600,color:"#1D3557"},children:"Access code"}),xt.jsx(nv,{value:c,onChange:x=>r(x.target.value),placeholder:""}),o&&xt.jsx("div",{style:{color:"red",marginTop:10,fontSize:13},children:o}),xt.jsx(iv,{type:"submit",children:"Enter"})]})]})})}Im.createRoot(document.getElementById("root")).render(xt.jsx(ja.StrictMode,{children:xt.jsx(dv,{})}));
+`,Wd="/assets/lab4u_logo-o_offLOe.svg",ov="https://app.powerbi.com/view?r=eyJrIjoiNjFkNjEyYmItZWFkMS00ZGJlLWIxNWEtZjJmMjljYzA3N2I4IiwidCI6IjE0NzZmZmRhLTQ0ZTMtNDI0MS1iNGNhLWQ2OWQyZGMwMWE4NCIsImMiOjR9";function dv(){const[c,r]=ja.useState(""),[o,s]=ja.useState(""),[S,O]=ja.useState(()=>!!localStorage.getItem("auth_code")),U=ja.useMemo(()=>new URLSearchParams(window.location.search).get("report")||ov,[]),j=x=>["INVESTLAB4U@2026"].includes(x.trim().toUpperCase()),D=x=>{if(x.preventDefault(),s(""),!c.trim()){s("Please enter a code");return}if(!j(c)){s("Invalid or incorrect code");return}localStorage.setItem("auth_code",c.trim()),O(!0)},z=()=>{localStorage.removeItem("auth_code"),O(!1)};return S?xt.jsx(wd,{children:xt.jsxs(av,{large:!0,children:[xt.jsxs(fv,{children:[xt.jsxs("div",{style:{display:"flex",alignItems:"center",gap:12},children:[xt.jsx("img",{src:Wd,alt:"Lab4U",style:{height:35}}),xt.jsx("span",{style:{fontWeight:600},children:"Reports Panel"})]}),xt.jsx(cv,{onClick:z,children:"Sign out"})]}),xt.jsx(sv,{children:xt.jsx(rv,{src:U,allowFullScreen:!0})})]})}):xt.jsx(wd,{children:xt.jsxs(lv,{children:[xt.jsx("img",{src:Wd,alt:"Lab4U",style:{height:45,marginBottom:20}}),xt.jsx(ev,{children:"Access your report"}),xt.jsx(uv,{children:"Enter the code we provided to access the Power BI report."}),xt.jsxs("form",{onSubmit:D,children:[xt.jsx("label",{style:{fontWeight:600,color:"#1D3557"},children:"Access code"}),xt.jsx(nv,{value:c,onChange:x=>r(x.target.value),placeholder:""}),o&&xt.jsx("div",{style:{color:"red",marginTop:10,fontSize:13},children:o}),xt.jsx(iv,{type:"submit",children:"Enter"})]})]})})}Im.createRoot(document.getElementById("root")).render(xt.jsx(ja.StrictMode,{children:xt.jsx(dv,{})}));
